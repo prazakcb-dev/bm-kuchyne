@@ -1,0 +1,234 @@
+{
+  "suppliers": [
+    { "name": "DOBRO MOCHOV", "products": "Maso", "contact": "Radek Maruška", "phone": "725 410 313", "window": "PO na ÚT, ČT na PÁ" },
+    { "name": "MTM BRAMBORY", "products": "Brambory", "contact": "Mikulíková", "phone": "602 117 860", "window": "PO–PÁ do 22:00" },
+    { "name": "BIDFOOD", "products": "Maso, suchý sklad, ryby", "contact": "Makovec", "phone": "603 374 823", "window": "PO–PÁ do 15:00" },
+    { "name": "ZELENINA BÍLÝ", "products": "Zelenina, ovoce", "contact": "Bílý", "phone": "723 650 853", "window": "PO–PÁ do 24:00" },
+    { "name": "CIPA", "products": "Maso, suchý sklad, ryby", "contact": "Živec", "phone": "607 018 769", "window": "ÚT na ST do 15:00" },
+    { "name": "LESA", "products": "Italské speciality", "contact": "Hroník", "phone": "608 372 819", "window": "PO–PÁ do 17:00" },
+    { "name": "BYLINKÁŘ", "products": "Bylinky (sezónně)", "contact": "Stýblo", "phone": "777 235 288", "window": "PO–PÁ do 17:00" },
+    { "name": "MADETA", "products": "Mléčné výrobky, vejce", "contact": "Motys", "phone": "778 402 124", "window": "PO–PÁ do 13:00" },
+    { "name": "MAKRO", "products": "Maso, suchý sklad, ryby", "contact": "Honc", "phone": "799 182 695", "window": "PO–PÁ do 16:00" },
+    { "name": "VODŇANSKÁ DRŮBEŽ", "products": "Drůbež", "contact": "Pasák", "phone": "724 503 908", "window": "PO–PÁ do 10:00" },
+    { "name": "DĚDOUCH ŘEZNÍK", "products": "Maso", "contact": "Hammerschmied", "phone": "604 325 563", "window": "PO–PÁ do 20:00" }
+  ],
+  "categories": {
+    "maso": {
+      "label": "Maso & Uzeniny",
+      "sections": [
+        { "title": "DRŮBEŽ", "items": [
+          { "name": "Kuřecí prsa", "supplier": "MAKRO" },
+          { "name": "Kuřecí stehna (vykostěná)", "supplier": "MAKRO" },
+          { "name": "Kuřecí stehna (s kostí)", "supplier": "MAKRO" },
+          { "name": "Kuřecí paličky", "supplier": "MAKRO" },
+          { "name": "Kuře celé", "supplier": "MAKRO" },
+          { "name": "Kuřecí kostry", "supplier": "MAKRO" },
+          { "name": "Kuřecí křídla", "supplier": "MAKRO" },
+          { "name": "Kuřecí játra", "supplier": "MAKRO" },
+          { "name": "Kachní stehna", "supplier": "MAKRO" },
+          { "name": "Kachní prsa", "supplier": "MAKRO" },
+          { "name": "Krůtí prsa", "supplier": "MAKRO" },
+          { "name": "Krůtí stehna", "supplier": "MAKRO" },
+          { "name": "Slepice mražená", "supplier": "MAKRO" }
+        ]},
+        { "title": "HOVĚZÍ MASO", "items": [
+          { "name": "Hovězí plec", "supplier": "DĚDOUCH ŘEZNÍK" },
+          { "name": "Hovězí maminha", "supplier": "DĚDOUCH ŘEZNÍK" },
+          { "name": "Hovězí mleté (burger)", "supplier": "DĚDOUCH ŘEZNÍK" },
+          { "name": "Hovězí ořech", "supplier": "DĚDOUCH ŘEZNÍK" },
+          { "name": "Hovězí líčka", "supplier": "DĚDOUCH ŘEZNÍK" },
+          { "name": "Hovězí kosti", "supplier": "DĚDOUCH ŘEZNÍK" },
+          { "name": "Hovězí játra", "supplier": "DĚDOUCH ŘEZNÍK" },
+          { "name": "Telecí – kýtový ořech", "supplier": "BIDFOOD" },
+          { "name": "Telecí játra", "supplier": "BIDFOOD" },
+          { "name": "Telecí spider steak", "supplier": "BIDFOOD" },
+          { "name": "Telecí líčka", "supplier": "BIDFOOD" }
+        ]},
+        { "title": "VEPŘOVÉ MASO", "items": [
+          { "name": "Vepřová krkovice", "supplier": "DĚDOUCH ŘEZNÍK" },
+          { "name": "Vepřový bok", "supplier": "DĚDOUCH ŘEZNÍK" },
+          { "name": "Vepřová pečeně", "supplier": "DĚDOUCH ŘEZNÍK" },
+          { "name": "Vepřová panenka", "supplier": "DĚDOUCH ŘEZNÍK" },
+          { "name": "Vepřové mleté", "supplier": "DĚDOUCH ŘEZNÍK" }
+        ]},
+        { "title": "UZENINY", "items": [
+          { "name": "Uzený špek (anglická slanina)", "supplier": "MAKRO" },
+          { "name": "Anglická slanina plátky", "supplier": "MAKRO" },
+          { "name": "Pancetta", "supplier": "MAKRO" },
+          { "name": "Vídeňské párky", "supplier": "DĚDOUCH ŘEZNÍK" },
+          { "name": "Dušená šunka", "supplier": "DĚDOUCH ŘEZNÍK" }
+        ]}
+      ]
+    },
+    "mleko": {
+      "label": "Mléko & Vejce",
+      "sections": [
+        { "title": "MLÉČNÉ VÝROBKY", "items": [
+          { "name": "Vejce", "supplier": "MAKRO" },
+          { "name": "Sýr gouda", "supplier": "MAKRO" },
+          { "name": "Sýr cheddar", "supplier": "MAKRO" },
+          { "name": "Hermelín", "supplier": "MAKRO" },
+          { "name": "Niva", "supplier": "MAKRO" },
+          { "name": "Mozzarella", "supplier": "MAKRO" },
+          { "name": "Majonéza", "supplier": "MAKRO" },
+          { "name": "Jogurt", "supplier": "MAKRO" },
+          { "name": "Vaječná melanž", "supplier": "MAKRO" },
+          { "name": "Pasterizované žloutky", "supplier": "MAKRO" },
+          { "name": "Mléko plnotučné", "supplier": "MADETA" },
+          { "name": "Smetana trvanlivá 33%", "supplier": "MADETA" },
+          { "name": "Smetana čerstvá 33%", "supplier": "MADETA" },
+          { "name": "Máslo", "supplier": "MADETA" },
+          { "name": "Zakysaná smetana", "supplier": "MADETA" },
+          { "name": "Sýr gorgonzola", "supplier": "LESA" },
+          { "name": "Sýr Grana Padano", "supplier": "LESA" }
+        ]}
+      ]
+    },
+    "suchy": {
+      "label": "Suchý sklad",
+      "sections": [
+        { "title": "MOUKY & ŠKROBY", "items": [
+          { "name": "Mouka hladká", "supplier": "MAKRO" },
+          { "name": "Mouka polohrubá", "supplier": "MAKRO" },
+          { "name": "Mouka hrubá", "supplier": "MAKRO" },
+          { "name": "Krupice", "supplier": "MAKRO" },
+          { "name": "Bramborový škrob", "supplier": "MAKRO" }
+        ]},
+        { "title": "PEČENÍ", "items": [
+          { "name": "Pudinkový prášek", "supplier": "MAKRO" },
+          { "name": "Kypřící prášek", "supplier": "MAKRO" },
+          { "name": "Jedlá soda", "supplier": "MAKRO" },
+          { "name": "Suché droždí", "supplier": "MAKRO" },
+          { "name": "Vanilkový extrakt", "supplier": "MAKRO" }
+        ]},
+        { "title": "CUKRY & SLADIDLA", "items": [
+          { "name": "Cukr krystal", "supplier": "MAKRO" },
+          { "name": "Cukr moučka", "supplier": "MAKRO" },
+          { "name": "Hnědý cukr", "supplier": "MAKRO" },
+          { "name": "Palmový cukr", "supplier": "MAKRO" },
+          { "name": "Med", "supplier": "MAKRO" }
+        ]},
+        { "title": "HOŘČICE", "items": [
+          { "name": "Hořčice plnotučná", "supplier": "MAKRO" },
+          { "name": "Hořčice dijon", "supplier": "MAKRO" },
+          { "name": "Hořčice hrubozrnná", "supplier": "MAKRO" }
+        ]},
+        { "title": "OLEJE", "items": [
+          { "name": "Olej rostlinný", "supplier": "MAKRO" },
+          { "name": "Olivový olej extra virgin", "supplier": "MAKRO" },
+          { "name": "Fritovací olej", "supplier": "MAKRO" },
+          { "name": "Sezamový olej", "supplier": "MAKRO" },
+          { "name": "Dýňový olej", "supplier": "MAKRO" }
+        ]},
+        { "title": "OCTY", "items": [
+          { "name": "Ocet kvasný", "supplier": "MAKRO" },
+          { "name": "Ocet rýžový", "supplier": "MAKRO" },
+          { "name": "Ocet jablečný", "supplier": "MAKRO" }
+        ]},
+        { "title": "OMÁČKY & PŘÍSADY", "items": [
+          { "name": "Kečup", "supplier": "MAKRO" },
+          { "name": "Sójová omáčka", "supplier": "MAKRO" },
+          { "name": "Ústřicová omáčka", "supplier": "MAKRO" },
+          { "name": "Rybí omáčka", "supplier": "MAKRO" },
+          { "name": "Worcestershire", "supplier": "MAKRO" },
+          { "name": "Citrónová šťáva", "supplier": "MAKRO" }
+        ]},
+        { "title": "KONZERVY & SKLO", "items": [
+          { "name": "Drcená rajčata", "supplier": "MAKRO" },
+          { "name": "Rajčatový protlak", "supplier": "MAKRO" },
+          { "name": "Okurky nakládané", "supplier": "MAKRO" },
+          { "name": "Cornichons", "supplier": "MAKRO" },
+          { "name": "Jalapeño", "supplier": "MAKRO" },
+          { "name": "Kapary", "supplier": "MAKRO" },
+          { "name": "Kopr (zavařený)", "supplier": "MAKRO" },
+          { "name": "Olivy zelené", "supplier": "MAKRO" },
+          { "name": "Olivy černé", "supplier": "MAKRO" },
+          { "name": "Červené zelí", "supplier": "MAKRO" }
+        ]},
+        { "title": "PŘÍLOHY & TĚSTOVINY", "items": [
+          { "name": "Rýže jasmínová", "supplier": "MAKRO" },
+          { "name": "Rýže basmati", "supplier": "MAKRO" },
+          { "name": "Rýže arborio", "supplier": "MAKRO" },
+          { "name": "Cous cous", "supplier": "MAKRO" },
+          { "name": "Čočka", "supplier": "MAKRO" },
+          { "name": "Fazole", "supplier": "MAKRO" },
+          { "name": "Nudle babička", "supplier": "MAKRO" },
+          { "name": "Nudle vaječné", "supplier": "MAKRO" },
+          { "name": "Nudle skleněné", "supplier": "MAKRO" },
+          { "name": "Nudle rýžové", "supplier": "MAKRO" }
+        ]}
+      ]
+    },
+    "mrazene": {
+      "label": "Mražené výrobky",
+      "sections": [
+        { "title": "MRAŽENÉ VÝROBKY", "items": [
+          { "name": "Hranolky Aviko super crunch", "supplier": "CIPA" },
+          { "name": "Kořenová zelenina kostičky", "supplier": "CIPA" },
+          { "name": "Brokolice", "supplier": "MAKRO" },
+          { "name": "Hrášek", "supplier": "CIPA/MAKRO" },
+          { "name": "Krevety 16/20 loupané", "supplier": "BIDFOOD" },
+          { "name": "Italský světlý chléb", "supplier": "CIPA" },
+          { "name": "Směs ovoce exotic", "supplier": "MAKRO" },
+          { "name": "Maliny", "supplier": "MAKRO" },
+          { "name": "Citrónová tráva", "supplier": "MAKRO" },
+          { "name": "Galangal", "supplier": "MAKRO" },
+          { "name": "Limetové listy", "supplier": "MAKRO" },
+          { "name": "Hřiby", "supplier": "CIPA" },
+          { "name": "Houby směs", "supplier": "CIPA" }
+        ]}
+      ]
+    },
+    "zelenina": {
+      "label": "Zelenina & Ovoce",
+      "sections": [
+        { "title": "ZELENINA ČERSTVÁ", "items": [
+          { "name": "Brambory (slupka)", "supplier": "MTM BRAMBORY" },
+          { "name": "Brambory grenaille", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Červená řepa", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Mrkev", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Celer", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Petržel", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Dýně", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Cibule žlutá", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Cibule červená", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Šalotka", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Jarní cibulka", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Pórek", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Okurky", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Rajčata", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Cherry rajčata", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Papriky", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Chilli", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Cukety", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Lilek", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Lolo rosso", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Lolo biondo", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Ledový salát", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Římský salát", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Rukola", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Baby špenát", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Pak choi", "supplier": "ZELENINA BÍLÝ" }
+        ]},
+        { "title": "BYLINKY", "items": [
+          { "name": "Tymián", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Rozmarýn", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Máta", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Pažitka", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Listová petrželka", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Kopr", "supplier": "ZELENINA BÍLÝ" }
+        ]},
+        { "title": "HOUBY", "items": [
+          { "name": "Žampiony", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Hlíva ústřičná", "supplier": "ZELENINA BÍLÝ" }
+        ]},
+        { "title": "OVOCE", "items": [
+          { "name": "Limety", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Citrony", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Pomeranče", "supplier": "ZELENINA BÍLÝ" },
+          { "name": "Jablka", "supplier": "ZELENINA BÍLÝ" }
+        ]}
+      ]
+    }
+  }
+}

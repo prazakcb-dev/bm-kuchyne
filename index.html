@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="BM Kuchyně">
+<title>Objednávkové listy – BM Kuchyně</title>
+<style>
+  :root {
+    --bg: #f5f6fa; --card: #fff; --primary: #2d6a4f; --primary-light: #40916c;
+    --primary-bg: #d8f3dc; --accent: #e76f51; --accent-light: #f4a261;
+    --text: #212529; --text-muted: #6c757d; --border: #dee2e6; --row-alt: #f8f9fa;
+    --shadow: 0 2px 8px rgba(0,0,0,.08); --radius: 8px; --danger: #dc3545;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+
+  .header{background:var(--primary);color:#fff;padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.4rem;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.15)}
+  .header h1{font-size:1.15rem;font-weight:700;letter-spacing:.5px}
+  .ha{display:flex;gap:.35rem;align-items:center;flex-wrap:wrap}
+  .ha button{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);color:#fff;padding:.3rem .7rem;border-radius:var(--radius);cursor:pointer;font-size:.78rem;transition:background .2s}
+  .ha button:hover{background:rgba(255,255,255,.25)}
+  .ha .btn-accent{background:var(--accent);border-color:var(--accent);font-weight:600}
+
+  .sync-status{font-size:.7rem;opacity:.85;display:flex;align-items:center;gap:.25rem}
+  .dot{display:inline-block;width:8px;height:8px;border-radius:50%}
+  .dot.green{background:#51cf66}.dot.yellow{background:#ffd43b}.dot.red{background:#ff6b6b}.dot.gray{background:#adb5bd}
+
+  .nav{display:flex;gap:0;background:#fff;border-bottom:2px solid var(--border);overflow-x:auto;position:sticky;top:48px;z-index:99}
+  .nav button{background:none;border:none;padding:.55rem 1rem;font-size:.83rem;color:var(--text-muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s;font-weight:500}
+  .nav button:hover{color:var(--primary);background:var(--primary-bg)}
+  .nav button.active{color:var(--primary);border-bottom-color:var(--primary);font-weight:700}
+
+  .container{max-width:1400px;margin:0 auto;padding:1.2rem}
+  .panel{display:none}.panel.active{display:block}
+
+  .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:1.2rem;overflow:hidden}
+  .card-header{padding:.6rem 1rem;background:var(--primary-bg);border-bottom:1px solid #b7e4c7;display:flex;align-items:center;justify-content:space-between;gap:.4rem;flex-wrap:wrap}
+  .card-header h2{font-size:.95rem;color:var(--primary);text-transform:uppercase;letter-spacing:.5px}
+  .badge{background:var(--primary);color:#fff;padding:.1rem .5rem;border-radius:12px;font-size:.7rem}
+  .ch-btn{background:var(--primary);color:#fff;border:none;padding:.22rem .6rem;border-radius:var(--radius);cursor:pointer;font-size:.72rem}
+  .ch-btn:hover{background:var(--primary-light)}
+
+  table{width:100%;border-collapse:collapse}
+  th{background:var(--primary);color:#fff;text-align:left;padding:.45rem .65rem;font-size:.73rem;text-transform:uppercase;letter-spacing:.3px}
+  td{padding:.38rem .65rem;border-bottom:1px solid var(--border);font-size:.82rem;vertical-align:middle}
+  tr:nth-child(even) td{background:var(--row-alt)}
+  tr:hover td{background:#e8f5e9}
+  .subcategory td{background:var(--primary-bg)!important;font-weight:700;color:var(--primary);font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;padding:.28rem .65rem}
+  .add-row td{background:transparent!important;border-bottom:2px solid var(--primary-bg)}
+
+  .ss{background:#e9ecef;color:#495057;border:1px solid #ced4da;border-radius:4px;padding:.16rem .22rem;font-size:.74rem;font-weight:600;cursor:pointer;max-width:155px;width:100%}
+  .ss:focus{border-color:var(--primary);background:#fff}
+
+  input[type="text"],input[type="number"],select:not(.ss){border:1px solid var(--border);border-radius:4px;padding:.28rem .4rem;font-size:.81rem;width:100%;transition:border-color .2s}
+  input:focus,select:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 2px rgba(45,106,79,.15)}
+  .i-stav{max-width:110px}.i-obj{max-width:90px;text-align:center}
+
+  .ra{display:flex;gap:.15rem;justify-content:center}
+  .ra button{background:none;border:1px solid var(--border);color:var(--text-muted);padding:.08rem .3rem;border-radius:3px;cursor:pointer;font-size:.68rem;line-height:1;transition:all .15s}
+  .ra button:hover{background:var(--primary-bg);color:var(--primary);border-color:var(--primary)}
+  .ra button.bd:hover{background:#f8d7da;color:var(--danger);border-color:var(--danger)}
+  .bar{background:none;border:1px dashed var(--primary);color:var(--primary);padding:.18rem .5rem;border-radius:4px;cursor:pointer;font-size:.74rem}
+  .bar:hover{background:var(--primary-bg);border-style:solid}
+  .sa{display:inline-flex;gap:.15rem;margin-left:.4rem}
+  .sa button{background:none;border:none;color:var(--primary);cursor:pointer;font-size:.7rem;opacity:.5;padding:.08rem .25rem;border-radius:3px}
+  .sa button:hover{opacity:1;background:rgba(255,255,255,.5)}
+
+  .supplier-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:.8rem;padding:1rem}
+  .sc{border:1px solid var(--border);border-radius:var(--radius);padding:.8rem;transition:box-shadow .2s}
+  .sc:hover{box-shadow:0 4px 16px rgba(0,0,0,.1)}
+  .sc h3{font-size:.9rem;color:var(--primary);margin-bottom:.3rem;display:flex;align-items:center;justify-content:space-between}
+  .sc .meta{font-size:.78rem;color:var(--text-muted)}
+  .sc .meta div{margin-bottom:.1rem}
+  .sc .meta strong{color:var(--text)}
+  .sc .ow{display:inline-block;background:var(--accent-light);color:#fff;padding:.1rem .4rem;border-radius:4px;font-size:.68rem;font-weight:600;margin-top:.2rem}
+  .sc a{color:var(--primary)}
+  .sca{display:flex;gap:.2rem}
+  .sca button{background:none;border:1px solid var(--border);color:var(--text-muted);padding:.1rem .35rem;border-radius:4px;cursor:pointer;font-size:.68rem;transition:all .15s}
+  .sca button:hover{background:var(--primary-bg);color:var(--primary);border-color:var(--primary)}
+  .sca button.bd:hover{background:#f8d7da;color:var(--danger);border-color:var(--danger)}
+
+  .pp{padding:1rem}
+  .pc{display:flex;gap:.5rem;margin-bottom:.8rem;flex-wrap:wrap;align-items:center}
+  .pc select,.pc input{max-width:220px}
+  .pc button{background:var(--primary);color:#fff;border:none;padding:.3rem .8rem;border-radius:var(--radius);cursor:pointer;font-size:.8rem}
+  .pc button:hover{background:var(--primary-light)}
+  .pt th{position:static}.pt td input{max-width:90px;text-align:right}
+  .pb{background:#d4edda!important;font-weight:700}.pw{background:#f8d7da!important}
+  .pd{font-size:.7rem;color:var(--text-muted)}
+  .ps{margin-top:.8rem;padding:.7rem;background:var(--primary-bg);border-radius:var(--radius)}
+  .ps h3{color:var(--primary);margin-bottom:.3rem;font-size:.9rem}
+
+  @media print{.header,.nav,.ha,.no-print,.pc button,.sca,.ch-btn,.ra,.bar,.sa,.add-row{display:none!important}.panel{display:block!important;page-break-after:always}body{background:#fff}.card{box-shadow:none;border:1px solid #ccc}.ss{border:none;background:transparent;appearance:none;-webkit-appearance:none}}
+  @media(max-width:768px){.header{padding:.5rem .7rem}.header h1{font-size:.9rem}.container{padding:.5rem}.nav button{padding:.4rem .55rem;font-size:.73rem}th,td{padding:.25rem .35rem;font-size:.74rem}.supplier-grid{grid-template-columns:1fr}}
+
+  .mo{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;align-items:center;justify-content:center}
+  .mo.open{display:flex}
+  .md{background:#fff;border-radius:var(--radius);padding:1.2rem;max-width:480px;width:92%;max-height:85vh;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.2)}
+  .md h2{margin-bottom:.7rem;color:var(--primary);font-size:1rem}
+  .md label{display:block;margin-bottom:.18rem;font-weight:600;font-size:.78rem;color:var(--text-muted)}
+  .md input,.md select{margin-bottom:.5rem}
+  .mda{display:flex;gap:.35rem;justify-content:flex-end;margin-top:.7rem;padding-top:.5rem;border-top:1px solid var(--border)}
+  .mda button{padding:.35rem 1rem;border-radius:var(--radius);border:1px solid var(--border);cursor:pointer;font-size:.81rem;font-weight:500}
+  .mda .ms{background:var(--primary);color:#fff;border-color:var(--primary)}.mda .ms:hover{background:var(--primary-light)}
+  .mda .mc{background:#fff}.mda .mc:hover{background:var(--row-alt)}
+  .mda .mdg{background:var(--danger);color:#fff;border-color:var(--danger)}.mda .mdg:hover{background:#c0392b}
+
+  .export-preview{background:#f8f9fa;border:1px solid var(--border);border-radius:var(--radius);padding:.7rem;margin-top:.5rem;font-family:'Consolas',monospace;font-size:.78rem;white-space:pre-wrap;max-height:320px;overflow-y:auto}
+
+  .loading-overlay{position:fixed;inset:0;background:var(--bg);z-index:300;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem}
+  .loading-overlay h2{color:var(--primary);font-size:1.1rem}
+  .spinner{width:36px;height:36px;border:4px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<div class="loading-overlay" id="loadingOverlay">
+  <div class="spinner"></div>
+  <h2>Načítání...</h2>
+</div>
+
+<div class="header">
+  <h1>&#127860; BM Kuchyně – Objednávky</h1>
+  <div class="ha">
+    <span class="sync-status" id="syncStatus"><span class="dot gray"></span>Načítání...</span>
+    <button onclick="exportOrder()">&#128424; Export</button>
+    <button onclick="window.print()">&#128424; Tisk</button>
+    <button onclick="clearAllOrders()">&#128260; Vymazat</button>
+  </div>
+</div>
+
+<div class="nav" id="nav">
+  <button class="active" data-tab="dodavatele">Dodavatelé</button>
+  <button data-tab="maso">Maso</button>
+  <button data-tab="mleko">Mléko</button>
+  <button data-tab="suchy">Suchý sklad</button>
+  <button data-tab="mrazene">Mražené</button>
+  <button data-tab="zelenina">Zelenina</button>
+  <button data-tab="ceny">&#128200; Ceny</button>
+</div>
+
+<div class="container">
+  <div class="panel active" id="panel-dodavatele"><div class="card"><div class="card-header"><h2>Dodavatelé</h2><div style="display:flex;align-items:center;gap:.3rem"><span class="badge" id="badge-suppliers"></span><button class="ch-btn" onclick="openSupplierModal()">+ Dodavatel</button></div></div><div class="supplier-grid" id="supplierGrid"></div></div></div>
+  <div class="panel" id="panel-maso"><div class="card" id="card-maso"></div></div>
+  <div class="panel" id="panel-mleko"><div class="card" id="card-mleko"></div></div>
+  <div class="panel" id="panel-suchy"><div class="card" id="card-suchy"></div></div>
+  <div class="panel" id="panel-mrazene"><div class="card" id="card-mrazene"></div></div>
+  <div class="panel" id="panel-zelenina"><div class="card" id="card-zelenina"></div></div>
+  <div class="panel" id="panel-ceny"><div class="card"><div class="card-header"><h2>&#128200; Cenové srovnání</h2><span class="badge" id="price-update-badge"></span></div>
+    <div class="pp"><p style="margin-bottom:.7rem;color:var(--text-muted);font-size:.82rem">Ceny aktualizuje Claude z podkladů od dodavatelů. Nejnižší cena = zelená.</p>
+    <div class="pc"><select id="priceCatFilter" onchange="renderPriceTable()"><option value="all">Všechny</option></select><input type="text" id="priceSearch" placeholder="Hledat..." oninput="renderPriceTable()" style="max-width:180px"><button onclick="exportPriceCSV()">&#128229; CSV</button></div>
+    <div style="overflow-x:auto"><table class="pt" id="priceTable"><thead id="ptHead"></thead><tbody id="ptBody"></tbody></table></div>
+    <div class="ps" id="priceSummary"></div></div>
+  </div></div>
+</div>
+
+<!-- MODALS -->
+<div class="mo" id="modalSupplier" onclick="if(event.target===this)closeModal(this.id)"><div class="md">
+  <h2 id="mSupTitle">Nový dodavatel</h2><input type="hidden" id="mSupIdx" value="-1">
+  <label>Název *</label><input type="text" id="mSupName"><label>Sortiment</label><input type="text" id="mSupProd">
+  <label>Kontakt</label><input type="text" id="mSupContact"><label>Telefon</label><input type="text" id="mSupPhone">
+  <label>Čas objednávky</label><input type="text" id="mSupWindow">
+  <div class="mda"><button class="mdg" id="mSupDel" style="display:none;margin-right:auto" onclick="delSupModal()">Smazat</button><button class="mc" onclick="closeModal('modalSupplier')">Zrušit</button><button class="ms" onclick="saveSup()">Uložit</button></div>
+</div></div>
+
+<div class="mo" id="modalItem" onclick="if(event.target===this)closeModal(this.id)"><div class="md">
+  <h2 id="mItTitle">Nová položka</h2><input type="hidden" id="mItCat"><input type="hidden" id="mItSec" value="-1"><input type="hidden" id="mItIdx" value="-1">
+  <label>Název *</label><input type="text" id="mItName"><label>Dodavatel</label><select id="mItSup"></select><label>Sekce</label><select id="mItSection"></select>
+  <div class="mda"><button class="mdg" id="mItDel" style="display:none;margin-right:auto" onclick="delItemModal()">Smazat</button><button class="mc" onclick="closeModal('modalItem')">Zrušit</button><button class="ms" onclick="saveItem()">Uložit</button></div>
+</div></div>
+
+<div class="mo" id="modalSection" onclick="if(event.target===this)closeModal(this.id)"><div class="md">
+  <h2 id="mSecTitle">Nová sekce</h2><input type="hidden" id="mSecCat"><input type="hidden" id="mSecIdx" value="-1">
+  <label>Název sekce *</label><input type="text" id="mSecName">
+  <div class="mda"><button class="mdg" id="mSecDel" style="display:none;margin-right:auto" onclick="delSecModal()">Smazat</button><button class="mc" onclick="closeModal('modalSection')">Zrušit</button><button class="ms" onclick="saveSec()">Uložit</button></div>
+</div></div>
+
+<div class="mo" id="modalExport" onclick="if(event.target===this)closeModal(this.id)"><div class="md">
+  <h2>Export objednávky</h2><div class="export-preview" id="exportPreview"></div>
+  <div class="mda"><button class="mc" onclick="closeModal('modalExport')">Zavřít</button><button class="ms" onclick="navigator.clipboard.writeText(document.getElementById('exportPreview').textContent).then(()=>alert('Zkopírováno!'))">&#128203; Kopírovat</button></div>
+</div></div>
+
+<!-- ═══ FIREBASE SDK (compat mode for simplicity) ═══ -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script>
+// ══════════════════════════════════════════════════════════
+// FIREBASE CONFIG – NAHRAĎTE VLASTNÍMI ÚDAJI z Firebase Console
+// ══════════════════════════════════════════════════════════
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyBdnZ7lqmyxwJM2pZJfl9px66obR0BeAm8",
+  authDomain: "bm-kuchyne.firebaseapp.com",
+  projectId: "bm-kuchyne",
+  storageBucket: "bm-kuchyne.firebasestorage.app",
+  messagingSenderId: "789706070703",
+  appId: "1:789706070703:web:9201df5c23e133c6bb125a"
+};
+
+// ══════════════════════════════════════════════════════════
+// STATE
+// ══════════════════════════════════════════════════════════
+let suppliers = [];
+let categories = {};
+let priceData = {};
+let priceUpdatedAt = null;
+let orderData = {};       // synced via Firestore
+let db = null;            // Firestore instance
+let authUid = null;
+let firebaseReady = false;
+let unsubOrders = null;   // Firestore listener unsubscribe
+
+// ══════════════════════════════════════════════════════════
+// HELPERS
+// ══════════════════════════════════════════════════════════
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function closeModal(id){document.getElementById(id).classList.remove('open')}
+function getSupNames(){const n=new Set(suppliers.map(s=>s.name));for(const c of Object.values(categories))for(const s of c.sections)for(const i of s.items)if(i.supplier)n.add(i.supplier);return[...n].sort()}
+function supOpts(sel){return getSupNames().map(n=>`<option value="${esc(n)}"${n===sel?' selected':''}>${esc(n)}</option>`).join('')}
+
+function setSyncStatus(state, text) {
+  const el = document.getElementById('syncStatus');
+  el.innerHTML = `<span class="dot ${state}"></span>${text}`;
+}
+
+// ══════════════════════════════════════════════════════════
+// DATA LOADING (JSON files + Firebase)
+// ══════════════════════════════════════════════════════════
+async function init() {
+  try {
+    // 1. Load catalog & prices from static JSON files
+    const [catRes, priceRes] = await Promise.all([
+      fetch('data/catalog.json'),
+      fetch('data/prices.json')
+    ]);
+
+    if (!catRes.ok) throw new Error('Nepodařilo se načíst catalog.json');
+    const catalog = await catRes.json();
+    suppliers = catalog.suppliers || [];
+    categories = catalog.categories || {};
+
+    if (priceRes.ok) {
+      const pd = await priceRes.json();
+      priceData = pd.prices || {};
+      priceUpdatedAt = pd.updatedAt || null;
+    }
+
+    // 2. Initialize Firebase
+    await initFirebase();
+
+    // 3. Render everything
+    renderSuppliers();
+    for (const k of Object.keys(categories)) renderCategory(k);
+    updatePriceCatFilter();
+    renderPriceTable();
+    setupNav();
+
+    document.getElementById('loadingOverlay').style.display = 'none';
+  } catch (e) {
+    console.error('Init error:', e);
+    document.getElementById('loadingOverlay').innerHTML =
+      `<h2 style="color:var(--danger)">Chyba při načítání</h2><p style="color:var(--text-muted);margin-top:.5rem">${esc(e.message)}</p>
+       <button onclick="location.reload()" style="margin-top:1rem;padding:.5rem 1.5rem;border-radius:var(--radius);border:1px solid var(--border);cursor:pointer">Zkusit znovu</button>`;
+  }
+}
+
+async function initFirebase() {
+  // Skip Firebase if config not set (local development)
+  if (FIREBASE_CONFIG.apiKey === 'PASTE-YOUR-API-KEY') {
+    console.warn('Firebase není nakonfigurován – používám localStorage jako fallback.');
+    setSyncStatus('yellow', 'Offline režim (localStorage)');
+    loadLocalFallback();
+    firebaseReady = false;
+    return;
+  }
+
+  firebase.initializeApp(FIREBASE_CONFIG);
+  db = firebase.firestore();
+
+  // Enable offline persistence
+  try { await db.enablePersistence({ synchronizeTabs: true }); } catch(e) { console.warn('Persistence:', e.code); }
+
+  // Anonymous auth
+  const cred = await firebase.auth().signInAnonymously();
+  authUid = cred.user.uid;
+  firebaseReady = true;
+
+  // Listen for real-time order changes
+  unsubOrders = db.collection('orders').onSnapshot(snap => {
+    const newData = {};
+    snap.forEach(doc => { newData[doc.id] = doc.data(); });
+    orderData = newData;
+    // Re-render all category tables with fresh order data
+    for (const k of Object.keys(categories)) renderCategory(k);
+    setSyncStatus('green', 'Synchronizováno');
+  }, err => {
+    console.error('Firestore listen error:', err);
+    setSyncStatus('red', 'Chyba sync');
+  });
+}
+
+// localStorage fallback when Firebase not configured
+function loadLocalFallback() {
+  try {
+    const raw = localStorage.getItem('bm-orders-v3');
+    if (raw) orderData = JSON.parse(raw) || {};
+  } catch(e) {}
+}
+function saveLocalFallback() {
+  localStorage.setItem('bm-orders-v3', JSON.stringify(orderData));
+}
+
+// ══════════════════════════════════════════════════════════
+// FIRESTORE WRITE HELPERS
+// ══════════════════════════════════════════════════════════
+function saveOrder(key, data) {
+  if (!orderData[key]) orderData[key] = {};
+  Object.assign(orderData[key], data);
+
+  if (firebaseReady && db) {
+    const doc = { ...orderData[key], updatedAt: firebase.firestore.FieldValue.serverTimestamp() };
+    db.collection('orders').doc(key).set(doc, { merge: true }).catch(e => {
+      console.error('Write error:', e);
+      setSyncStatus('red', 'Chyba zápisu');
+    });
+  } else {
+    saveLocalFallback();
+  }
+}
+
+function deleteOrder(key) {
+  delete orderData[key];
+  if (firebaseReady && db) {
+    db.collection('orders').doc(key).delete().catch(e => console.error(e));
+  } else {
+    saveLocalFallback();
+  }
+}
+
+// ══════════════════════════════════════════════════════════
+// NAV
+// ══════════════════════════════════════════════════════════
+function setupNav() {
+  document.querySelectorAll('.nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.nav button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+}
+
+// ══════════════════════════════════════════════════════════
+// RENDER: SUPPLIERS
+// ══════════════════════════════════════════════════════════
+function renderSuppliers() {
+  const g = document.getElementById('supplierGrid');
+  g.innerHTML = suppliers.map((s,i) => `<div class="sc"><h3><span>${esc(s.name)}</span><span class="sca">
+    <button onclick="openSupplierModal(${i})">&#9998;</button><button class="bd" onclick="delSup(${i})">&#10005;</button>
+    </span></h3><div class="meta"><div><strong>Sortiment:</strong> ${esc(s.products)}</div><div><strong>Kontakt:</strong> ${esc(s.contact)}</div>
+    <div><strong>Tel:</strong> <a href="tel:${s.phone.replace(/\s/g,'')}">${esc(s.phone)}</a></div><div class="ow">&#128197; ${esc(s.window)}</div></div></div>`).join('');
+  const b = document.getElementById('badge-suppliers'); if(b) b.textContent = suppliers.length;
+}
+
+function openSupplierModal(idx) {
+  const e = idx !== undefined && idx >= 0;
+  document.getElementById('mSupTitle').textContent = e ? 'Upravit dodavatele' : 'Nový dodavatel';
+  document.getElementById('mSupIdx').value = e ? idx : -1;
+  document.getElementById('mSupDel').style.display = e ? 'inline-block' : 'none';
+  const s = e ? suppliers[idx] : {name:'',products:'',contact:'',phone:'',window:''};
+  document.getElementById('mSupName').value = s.name; document.getElementById('mSupProd').value = s.products;
+  document.getElementById('mSupContact').value = s.contact; document.getElementById('mSupPhone').value = s.phone;
+  document.getElementById('mSupWindow').value = s.window;
+  document.getElementById('modalSupplier').classList.add('open'); document.getElementById('mSupName').focus();
+}
+
+function saveSup() {
+  const name = document.getElementById('mSupName').value.trim().toUpperCase(); if(!name) return alert('Zadejte název.');
+  const idx = +document.getElementById('mSupIdx').value;
+  const obj = {name, products:document.getElementById('mSupProd').value.trim(), contact:document.getElementById('mSupContact').value.trim(), phone:document.getElementById('mSupPhone').value.trim(), window:document.getElementById('mSupWindow').value.trim()};
+  if(idx>=0){const old=suppliers[idx].name;suppliers[idx]=obj;if(old!==name)renameSup(old,name);} else{if(suppliers.some(s=>s.name===name))return alert('Už existuje.');suppliers.push(obj);}
+  closeModal('modalSupplier'); saveCatalogLocal(); renderAll();
+}
+function delSup(i){if(!confirm(`Smazat "${suppliers[i].name}"?`))return;suppliers.splice(i,1);saveCatalogLocal();renderAll();}
+function delSupModal(){const i=+document.getElementById('mSupIdx').value;if(i>=0){closeModal('modalSupplier');delSup(i);}}
+function renameSup(o,n){for(const c of Object.values(categories))for(const s of c.sections)for(const it of s.items)if(it.supplier===o)it.supplier=n;}
+
+// ══════════════════════════════════════════════════════════
+// RENDER: CATEGORY TABLE
+// ══════════════════════════════════════════════════════════
+function renderCategory(ck) {
+  const cat = categories[ck]; if(!cat) return;
+  const card = document.getElementById('card-'+ck);
+  let total = 0; cat.sections.forEach(s => total += s.items.length);
+
+  let h = `<div class="card-header"><h2>${esc(cat.label)}</h2><div style="display:flex;align-items:center;gap:.3rem">
+    <span class="badge">${total}</span><button class="ch-btn" onclick="openSecModal('${ck}')">+ Sekce</button><button class="ch-btn" onclick="openItemModal('${ck}')">+ Položka</button></div></div>
+    <table><thead><tr><th style="width:24%">Položka</th><th style="width:14%">Dodavatel</th><th style="width:13%">Stav</th><th style="width:11%">Obj.</th><th style="width:26%">Poznámka</th><th style="width:12%;text-align:center">Akce</th></tr></thead><tbody>`;
+
+  cat.sections.forEach((sec, si) => {
+    h += `<tr class="subcategory"><td colspan="6">${esc(sec.title)}<span class="sa">
+      <button onclick="openSecModal('${ck}',${si})">&#9998;</button><button onclick="delSec('${ck}',${si})">&#10005;</button></span></td></tr>`;
+
+    sec.items.forEach((item, ii) => {
+      const key = ck+'|'+item.name, d = orderData[key] || {};
+      h += `<tr><td><strong>${esc(item.name)}</strong></td>
+        <td><select class="ss" data-cat="${ck}" data-sec="${si}" data-item="${ii}" onchange="chgSup(this)">${supOpts(item.supplier)}</select></td>
+        <td><input type="text" class="i-stav" placeholder="OK / Dochází" value="${esc(d.stav||'')}" data-key="${esc(key)}" data-field="stav" onchange="updField(this)"></td>
+        <td><input type="text" class="i-obj" placeholder="Mn." value="${esc(d.obj||'')}" data-key="${esc(key)}" data-field="obj" onchange="updField(this)"></td>
+        <td><input type="text" placeholder="Poznámka" value="${esc(d.note||'')}" data-key="${esc(key)}" data-field="note" onchange="updField(this)"></td>
+        <td><div class="ra"><button onclick="openItemModal('${ck}',${si},${ii})">&#9998;</button><button class="bd" onclick="delItem('${ck}',${si},${ii})">&#10005;</button></div></td></tr>`;
+    });
+    h += `<tr class="add-row"><td colspan="6" style="text-align:center;padding:.25rem"><button class="bar" onclick="openItemModal('${ck}',${si})">+ ${esc(sec.title)}</button></td></tr>`;
+  });
+  h += '</tbody></table>';
+  card.innerHTML = h;
+}
+
+function updField(el){const k=el.dataset.key,f=el.dataset.field;saveOrder(k,{[f]:el.value});}
+function chgSup(el){const c=el.dataset.cat,s=+el.dataset.sec,i=+el.dataset.item;categories[c].sections[s].items[i].supplier=el.value;saveCatalogLocal();}
+
+// ══════════════════════════════════════════════════════════
+// ITEM CRUD
+// ══════════════════════════════════════════════════════════
+function openItemModal(ck,si,ii){
+  const e=ii!==undefined&&ii>=0;
+  document.getElementById('mItTitle').textContent=e?'Upravit položku':'Nová položka';
+  document.getElementById('mItCat').value=ck;document.getElementById('mItSec').value=si!==undefined?si:-1;document.getElementById('mItIdx').value=e?ii:-1;
+  document.getElementById('mItDel').style.display=e?'inline-block':'none';
+  document.getElementById('mItSup').innerHTML=supOpts(e?categories[ck].sections[si].items[ii].supplier:(getSupNames()[0]||''));
+  document.getElementById('mItSection').innerHTML=categories[ck].sections.map((s,i)=>`<option value="${i}"${i===(si!==undefined?si:0)?' selected':''}>${esc(s.title)}</option>`).join('');
+  document.getElementById('mItName').value=e?categories[ck].sections[si].items[ii].name:'';
+  document.getElementById('modalItem').classList.add('open');document.getElementById('mItName').focus();
+}
+function saveItem(){
+  const name=document.getElementById('mItName').value.trim();if(!name)return alert('Zadejte název.');
+  const ck=document.getElementById('mItCat').value,secIdx=+document.getElementById('mItSection').value,ii=+document.getElementById('mItIdx').value,sup=document.getElementById('mItSup').value,origSec=+document.getElementById('mItSec').value;
+  if(ii>=0){const old=categories[ck].sections[origSec].items[ii],oldK=ck+'|'+old.name,newK=ck+'|'+name;
+    if(origSec!==secIdx){categories[ck].sections[origSec].items.splice(ii,1);categories[ck].sections[secIdx].items.push({name,supplier:sup});}
+    else{old.name=name;old.supplier=sup;}
+    if(oldK!==newK&&orderData[oldK]){saveOrder(newK,orderData[oldK]);deleteOrder(oldK);}
+  }else{categories[ck].sections[secIdx].items.push({name,supplier:sup});}
+  closeModal('modalItem');saveCatalogLocal();renderCategory(ck);renderPriceTable();
+}
+function delItem(ck,si,ii){const it=categories[ck].sections[si].items[ii];if(!confirm(`Smazat "${it.name}"?`))return;deleteOrder(ck+'|'+it.name);categories[ck].sections[si].items.splice(ii,1);saveCatalogLocal();renderCategory(ck);renderPriceTable();}
+function delItemModal(){const c=document.getElementById('mItCat').value,s=+document.getElementById('mItSec').value,i=+document.getElementById('mItIdx').value;if(i>=0){closeModal('modalItem');delItem(c,s,i);}}
+
+// ══════════════════════════════════════════════════════════
+// SECTION CRUD
+// ══════════════════════════════════════════════════════════
+function openSecModal(ck,si){
+  const e=si!==undefined&&si>=0;
+  document.getElementById('mSecTitle').textContent=e?'Upravit sekci':'Nová sekce';
+  document.getElementById('mSecCat').value=ck;document.getElementById('mSecIdx').value=e?si:-1;
+  document.getElementById('mSecDel').style.display=e?'inline-block':'none';
+  document.getElementById('mSecName').value=e?categories[ck].sections[si].title:'';
+  document.getElementById('modalSection').classList.add('open');document.getElementById('mSecName').focus();
+}
+function saveSec(){
+  const name=document.getElementById('mSecName').value.trim().toUpperCase();if(!name)return alert('Zadejte název.');
+  const ck=document.getElementById('mSecCat').value,idx=+document.getElementById('mSecIdx').value;
+  if(idx>=0)categories[ck].sections[idx].title=name;else categories[ck].sections.push({title:name,items:[]});
+  closeModal('modalSection');saveCatalogLocal();renderCategory(ck);
+}
+function delSec(ck,si){const sec=categories[ck].sections[si];if(!confirm(`Smazat "${sec.title}"${sec.items.length?' a '+sec.items.length+' položek':''}?`))return;
+  for(const it of sec.items)deleteOrder(ck+'|'+it.name);categories[ck].sections.splice(si,1);saveCatalogLocal();renderCategory(ck);renderPriceTable();}
+function delSecModal(){const c=document.getElementById('mSecCat').value,i=+document.getElementById('mSecIdx').value;if(i>=0){closeModal('modalSection');delSec(c,i);}}
+
+// ══════════════════════════════════════════════════════════
+// CATALOG LOCAL SAVE (supplier/item structure changes)
+// ══════════════════════════════════════════════════════════
+// Note: catalog changes are saved locally and will persist until next catalog.json fetch.
+// For permanent changes, update catalog.json in the repo (Claude does this).
+function saveCatalogLocal() {
+  localStorage.setItem('bm-catalog-override', JSON.stringify({ suppliers, categories }));
+}
+function loadCatalogOverride() {
+  try {
+    const raw = localStorage.getItem('bm-catalog-override');
+    if (raw) { const d = JSON.parse(raw); suppliers = d.suppliers || suppliers; categories = d.categories || categories; }
+  } catch(e) {}
+}
+
+// ══════════════════════════════════════════════════════════
+// PRICE TABLE
+// ══════════════════════════════════════════════════════════
+function getAllItems(){const r=[];for(const[ck,cat]of Object.entries(categories))for(const sec of cat.sections)for(const it of sec.items)r.push({key:ck+'|'+it.name,name:it.name,category:ck,catLabel:cat.label,supplier:it.supplier});return r;}
+
+function updatePriceCatFilter(){document.getElementById('priceCatFilter').innerHTML='<option value="all">Všechny</option>'+Object.entries(categories).map(([k,v])=>`<option value="${k}">${esc(v.label)}</option>`).join('');}
+
+function renderPriceTable(){
+  const f=document.getElementById('priceCatFilter').value,q=document.getElementById('priceSearch').value.toLowerCase();
+  let items=getAllItems();const sn=getSupNames();
+  if(f!=='all')items=items.filter(i=>i.category===f);if(q)items=items.filter(i=>i.name.toLowerCase().includes(q));
+  document.getElementById('ptHead').innerHTML=`<tr><th>Položka</th><th>Kat.</th><th>Dod.</th>${sn.map(s=>`<th style="min-width:85px">${esc(s)}</th>`).join('')}</tr>`;
+  let html='',sav=0,comp=0;
+  for(const it of items){
+    const pr={};let mn=Infinity,mx=-Infinity;
+    for(const s of sn){const p=priceData[it.key]?.[s];if(p&&p.price>0){pr[s]=p.price;if(p.price<mn)mn=p.price;if(p.price>mx)mx=p.price;}}
+    const multi=Object.keys(pr).length>1;if(multi){comp++;const cp=pr[it.supplier];if(cp&&cp>mn)sav+=(cp-mn);}
+    html+=`<tr><td><strong>${esc(it.name)}</strong></td><td style="font-size:.7rem">${esc(it.catLabel)}</td><td style="font-size:.7rem">${esc(it.supplier)}</td>`;
+    for(const s of sn){const p=priceData[it.key]?.[s],v=p?p.price||'':'',c=multi&&v==mn?'pb':(multi&&v==mx?'pw':''),dt=p?.date?`<div class="pd">${p.date}</div>`:'';
+      html+=`<td class="${c}">${v?v.toFixed?v.toFixed(2):v:'-'}${dt}</td>`;}
+    html+='</tr>';
+  }
+  document.getElementById('ptBody').innerHTML=html||'<tr><td colspan="100" style="text-align:center;padding:1.5rem;color:var(--text-muted)">Žádné položky</td></tr>';
+  document.getElementById('priceSummary').innerHTML=`<h3>Souhrn</h3><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.6rem;margin-top:.3rem">
+    <div><span class="dot ${priceUpdatedAt?'green':'red'}"></span> ${priceUpdatedAt?'Aktualizace: <strong>'+priceUpdatedAt+'</strong>':'Neaktualizováno'}</div>
+    <div>Srovnáno: <strong>${comp}</strong></div><div>Úspora: <strong>${sav.toFixed(2)} Kč</strong></div><div>Dodavatelů: <strong>${sn.length}</strong></div></div>`;
+  const b=document.getElementById('price-update-badge');if(b)b.textContent=priceUpdatedAt||'–';
+}
+
+function exportPriceCSV(){const items=getAllItems(),sn=getSupNames();let csv='Položka;Kategorie;Dodavatel;'+sn.join(';')+'\n';
+  for(const it of items)csv+=`${it.name};${it.catLabel};${it.supplier};${sn.map(s=>priceData[it.key]?.[s]?.price||'').join(';')}\n`;
+  const b=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'});const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='ceny-'+new Date().toISOString().slice(0,10)+'.csv';a.click();}
+
+// ══════════════════════════════════════════════════════════
+// ORDER EXPORT
+// ══════════════════════════════════════════════════════════
+function exportOrder(){
+  const byS={};for(const[k,v]of Object.entries(orderData)){if(!v.obj)continue;const[ck,name]=k.split('|');let sup='?';
+    const cat=categories[ck];if(cat)for(const s of cat.sections){const it=s.items.find(i=>i.name===name);if(it){sup=it.supplier;break;}}
+    if(!byS[sup])byS[sup]=[];byS[sup].push({name,qty:v.obj,note:v.note||''});}
+  if(!Object.keys(byS).length)return alert('Žádné položky k objednání.');
+  const lines=[];for(const[s,its]of Object.entries(byS).sort((a,b)=>a[0].localeCompare(b[0]))){lines.push(`══ ${s} ══`);for(const it of its)lines.push(`  ${it.name}: ${it.qty}${it.note?' ('+it.note+')':''}`);lines.push('');}
+  document.getElementById('exportPreview').textContent=lines.join('\n');document.getElementById('modalExport').classList.add('open');
+}
+
+function clearAllOrders(){
+  if(!confirm('Vymazat všechny objednávky a stavy?\n(Položky a ceny zůstanou.)'))return;
+  if(firebaseReady&&db){const batch=db.batch();for(const k of Object.keys(orderData))batch.delete(db.collection('orders').doc(k));batch.commit().catch(e=>console.error(e));}
+  else{orderData={};saveLocalFallback();}
+  for(const k of Object.keys(categories))renderCategory(k);
+}
+
+// ══════════════════════════════════════════════════════════
+// RENDER ALL
+// ══════════════════════════════════════════════════════════
+function renderAll(){renderSuppliers();for(const k of Object.keys(categories))renderCategory(k);updatePriceCatFilter();renderPriceTable();}
+
+// Keyboard
+document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.mo.open').forEach(m=>m.classList.remove('open'));});
+
+// ══════════════════════════════════════════════════════════
+// BOOT
+// ══════════════════════════════════════════════════════════
+// Apply local catalog overrides (user edits from this session)
+// These persist until Claude updates catalog.json in the repo
+loadCatalogOverride();
+init();
+</script>
+</body>
+</html>
