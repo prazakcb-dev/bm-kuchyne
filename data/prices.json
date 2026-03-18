@@ -1,4 +1,152 @@
 {
-  "updatedAt": null,
-  "prices": {}
+  "updatedAt": "2026-02",
+  "prices": {
+    "zelenina|Brambory grenaille": {
+      "ZELENINA BÍLÝ": { "price": 22, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Červená řepa": {
+      "ZELENINA BÍLÝ": { "price": 16, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Mrkev": {
+      "ZELENINA BÍLÝ": { "price": 21, "unit": "kg", "date": "2026-02", "note": "karotka" }
+    },
+    "zelenina|Celer": {
+      "ZELENINA BÍLÝ": { "price": 16, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Dýně": {
+      "ZELENINA BÍLÝ": { "price": 48, "unit": "kg", "date": "2026-02", "note": "Hokkaido" }
+    },
+    "zelenina|Cibule žlutá": {
+      "ZELENINA BÍLÝ": { "price": 14, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Cibule červená": {
+      "ZELENINA BÍLÝ": { "price": 21, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Šalotka": {
+      "ZELENINA BÍLÝ": { "price": 49, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Jarní cibulka": {
+      "ZELENINA BÍLÝ": { "price": 18, "unit": "sv", "date": "2026-02", "note": "lahůdková" }
+    },
+    "zelenina|Okurky": {
+      "ZELENINA BÍLÝ": { "price": 76, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Rajčata": {
+      "ZELENINA BÍLÝ": { "price": 67, "unit": "kg", "date": "2026-02", "note": "keř" }
+    },
+    "zelenina|Cherry rajčata": {
+      "ZELENINA BÍLÝ": { "price": 34, "unit": "bal 250g", "date": "2026-02" }
+    },
+    "zelenina|Papriky": {
+      "ZELENINA BÍLÝ": { "price": 115, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Cukety": {
+      "ZELENINA BÍLÝ": { "price": 84, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Lolo rosso": {
+      "ZELENINA BÍLÝ": { "price": 29, "unit": "ks", "date": "2026-02" }
+    },
+    "zelenina|Lolo biondo": {
+      "ZELENINA BÍLÝ": { "price": 32, "unit": "ks", "date": "2026-02" }
+    },
+    "zelenina|Římský salát": {
+      "ZELENINA BÍLÝ": { "price": 46, "unit": "ks", "date": "2026-02" }
+    },
+    "zelenina|Rukola": {
+      "ZELENINA BÍLÝ": { "price": 32, "unit": "bal 125g", "date": "2026-02" }
+    },
+    "zelenina|Baby špenát": {
+      "ZELENINA BÍLÝ": { "price": 34, "unit": "bal 125g", "date": "2026-02" }
+    },
+    "zelenina|Máta": {
+      "ZELENINA BÍLÝ": { "price": 420, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Pažitka": {
+      "ZELENINA BÍLÝ": { "price": 520, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Listová petrželka": {
+      "ZELENINA BÍLÝ": { "price": 160, "unit": "kg", "date": "2026-02", "note": "Persil" }
+    },
+    "zelenina|Kopr": {
+      "ZELENINA BÍLÝ": { "price": 380, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Žampiony": {
+      "ZELENINA BÍLÝ": { "price": 89, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Limety": {
+      "ZELENINA BÍLÝ": { "price": 125, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Citrony": {
+      "ZELENINA BÍLÝ": { "price": 54, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Pomeranče": {
+      "ZELENINA BÍLÝ": { "price": 36, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Jablka": {
+      "ZELENINA BÍLÝ": { "price": 29, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Pastiňák": {
+      "ZELENINA BÍLÝ": { "price": 28, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Česnek": {
+      "ZELENINA BÍLÝ": { "price": 159, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Česnek loupaný": {
+      "ZELENINA BÍLÝ": { "price": 129, "unit": "kg", "date": "2026-02", "note": "vakuovaný" }
+    },
+    "zelenina|Květák": {
+      "ZELENINA BÍLÝ": { "price": 50, "unit": "ks", "date": "2026-02" }
+    },
+    "zelenina|Ředkvičky": {
+      "ZELENINA BÍLÝ": { "price": 14, "unit": "sv", "date": "2026-02" }
+    },
+    "zelenina|Zelí bílé": {
+      "ZELENINA BÍLÝ": { "price": 13, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Zelí červené": {
+      "ZELENINA BÍLÝ": { "price": 15, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Paprika bílá": {
+      "ZELENINA BÍLÝ": { "price": 119, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Cherry rajčata keř": {
+      "ZELENINA BÍLÝ": { "price": 229, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Celer řapíkatý": {
+      "ZELENINA BÍLÝ": { "price": 42, "unit": "ks", "date": "2026-02" }
+    },
+    "zelenina|Patáty": {
+      "ZELENINA BÍLÝ": { "price": 52, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Polníček": {
+      "ZELENINA BÍLÝ": { "price": 34, "unit": "bal 125g", "date": "2026-02" }
+    },
+    "zelenina|Salát Frisee": {
+      "ZELENINA BÍLÝ": { "price": 58, "unit": "ks", "date": "2026-02" }
+    },
+    "zelenina|Koriandr": {
+      "ZELENINA BÍLÝ": { "price": 380, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Bazalka": {
+      "ZELENINA BÍLÝ": { "price": 480, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Granátové jablko": {
+      "ZELENINA BÍLÝ": { "price": 42, "unit": "ks", "date": "2026-02" }
+    },
+    "zelenina|Ananas": {
+      "ZELENINA BÍLÝ": { "price": 95, "unit": "ks", "date": "2026-02" }
+    },
+    "zelenina|Hrozno bílé": {
+      "ZELENINA BÍLÝ": { "price": 119, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Hrozno červené": {
+      "ZELENINA BÍLÝ": { "price": 119, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Hrušky": {
+      "ZELENINA BÍLÝ": { "price": 42, "unit": "kg", "date": "2026-02" }
+    },
+    "zelenina|Meloun Cantaloupe": {
+      "ZELENINA BÍLÝ": { "price": 46, "unit": "kg", "date": "2026-02" }
+    }
+  }
 }
