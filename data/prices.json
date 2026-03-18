@@ -1,14 +1,160 @@
 {
-  "updatedAt": "2026-02",
+  "updatedAt": "2026-03",
   "prices": {
+
+    "maso|Kuřecí prsa": {
+      "BIDFOOD": { "price": 121, "unit": "kg", "date": "2026-03", "note": "ref. Excel" },
+      "DĚDOUCH ŘEZNÍK": { "price": 135, "unit": "kg", "date": "2026-03", "note": "ref. Excel" },
+      "MAKRO": { "price": 129, "unit": "kg", "date": "2026-03", "note": "Rabbit cena v Excel" }
+    },
+    "maso|Kuřecí stehna (s kostí)": {
+      "MAKRO": { "price": 95.8, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "maso|Kuře celé": {
+      "MAKRO": { "price": 96.9, "unit": "kg", "date": "2026-03", "note": "ref. Excel" },
+      "BIDFOOD": { "price": 89, "unit": "kg", "date": "2026-03", "note": "ref. Excel" },
+      "DĚDOUCH ŘEZNÍK": { "price": 75, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "maso|Kachní stehna": {
+      "BIDFOOD": { "price": 240.43, "unit": "kg", "date": "2026-03", "note": "Banquet kach.steh. vel. 4ks" }
+    },
+    "maso|Kachní prsa": {
+      "CIPA": { "price": 275, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "maso|Krůtí prsa": {
+      "MAKRO": { "price": 279, "unit": "kg", "date": "2026-03", "note": "ref. Excel" },
+      "BIDFOOD": { "price": 239.9, "unit": "kg", "date": "2026-03", "note": "ref. Excel" },
+      "DĚDOUCH ŘEZNÍK": { "price": 210, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "maso|Krůtí stehna": {
+      "MAKRO": { "price": 94, "unit": "kg", "date": "2026-03", "note": "Rabbit – ref. Excel, spodní" }
+    },
+    "maso|Slepice mražená": {},
+
+    "maso|Hovězí plec": {
+      "DĚDOUCH ŘEZNÍK": { "price": 265, "unit": "kg", "date": "2026-03", "note": "loupaná plec, ref. Excel" }
+    },
+    "maso|Hovězí mleté (burger)": {
+      "DĚDOUCH ŘEZNÍK": { "price": 185, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "maso|Hovězí líčka": {
+      "DĚDOUCH ŘEZNÍK": { "price": 235, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "maso|Telecí – kýtový ořech": {
+      "BIDFOOD": { "price": 489.9, "unit": "kg", "date": "2026-03", "note": "telecí pečeně BK mražená, faktura 760107250" }
+    },
+
+    "maso|Vepřová krkovice": {
+      "DĚDOUCH ŘEZNÍK": { "price": 100, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "maso|Vepřový bok": {
+      "MAKRO": { "price": 147, "unit": "kg", "date": "2026-03", "note": "ref. Excel" },
+      "DĚDOUCH ŘEZNÍK": { "price": 95, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "maso|Vepřová pečeně": {
+      "DĚDOUCH ŘEZNÍK": { "price": 100, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "maso|Vepřová panenka": {
+      "DĚDOUCH ŘEZNÍK": { "price": 170, "unit": "kg", "date": "2026-03", "note": "ref. Excel" },
+      "BIDFOOD": { "price": 159.9, "unit": "kg", "date": "2026-03", "note": "běžná cena, sleva 115-129 Kč" }
+    },
+
+    "maso|Pancetta": {
+      "BIDFOOD": { "price": 325, "unit": "kg", "date": "2026-03", "note": "Coati pancetta uzená, faktura 760107250" }
+    },
+
+    "mleko|Vejce": {
+      "MAKRO": { "price": 4.88, "unit": "ks", "date": "2026-03", "note": "vel. M, ref. Excel" },
+      "MADETA": { "price": 4.9, "unit": "ks", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "mleko|Sýr cheddar": {
+      "BIDFOOD": { "price": 290.57, "unit": "kg", "date": "2026-03", "note": "plátky 1kg, faktura 760107250" }
+    },
+    "mleko|Majonéza": {
+      "BIDFOOD": { "price": 51.03, "unit": "kg", "date": "2026-03", "note": "Coronet 5kg, faktura 760107250" }
+    },
+    "mleko|Mléko plnotučné": {
+      "MAKRO": { "price": 20.3, "unit": "l", "date": "2026-03", "note": "ref. Excel" },
+      "MADETA": { "price": 18, "unit": "l", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "mleko|Smetana trvanlivá 33%": {
+      "MADETA": { "price": 89, "unit": "l", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "mleko|Máslo": {
+      "MAKRO": { "price": 102, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "mleko|Sýr Grana Padano": {
+      "LESA": { "price": 245, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "mleko|Mascarpone": {
+      "BIDFOOD": { "price": 158.82, "unit": "kg", "date": "2026-03", "note": "Goldsteig kbelík 2kg, faktura 760107250" }
+    },
+    "mleko|Tvaroh tučný": {
+      "BIDFOOD": { "price": 104.9, "unit": "kg", "date": "2026-03", "note": "5kg, faktura 760107250" }
+    },
+
+    "suchy|Olivový olej extra virgin": {
+      "CIPA": { "price": 199, "unit": "l", "date": "2026-03", "note": "Santagata 5l=995 Kč, faktura 1260108506" }
+    },
+    "suchy|Sójová omáčka": {
+      "CIPA": { "price": 92, "unit": "ks", "date": "2026-03", "note": "Sweet A+ ketjap manis 500ml, faktura 1260109475" }
+    },
+    "suchy|Rýže jasmínová": {
+      "CIPA": { "price": 46.67, "unit": "kg", "date": "2026-03", "note": "Royal Tiger 18kg=840 Kč, faktura 1260109475" }
+    },
+
+    "mrazene|Hranolky Aviko super crunch": {
+      "CIPA": { "price": 69, "unit": "kg", "date": "2026-03", "note": "Premium Super Crunch 7mm 2,5kg, faktura 1260109475" },
+      "BIDFOOD": { "price": 72.9, "unit": "kg", "date": "2026-03", "note": "Aviko 806689 Sup.Crunch 7/7, faktura 760107250" }
+    },
+    "mrazene|Kořenová zelenina kostičky": {
+      "CIPA": { "price": 35, "unit": "kg", "date": "2026-03", "note": "zelenina svíčková 2,5kg Dione/Agro, faktura 1260109475" }
+    },
+    "mrazene|Krevety 16/20 loupané": {
+      "BIDFOOD": { "price": 309.9, "unit": "ks", "date": "2026-03", "note": "Vanamei 26/30 sáč. 800g, faktura 760107250" },
+      "CIPA": { "price": 340, "unit": "ks", "date": "2026-02", "note": "26/30 HLSL PND 20% led, faktura 1260106609" }
+    },
+    "mrazene|Limetové listy": {
+      "CIPA": { "price": 75, "unit": "ks", "date": "2026-03", "note": "100g mražené, faktura 1260109475" }
+    },
+    "mrazene|Maliny": {
+      "CIPA": { "price": 380, "unit": "kg", "date": "2026-03", "note": "červené 2,5kg Ardo, faktura 1260108506" }
+    },
+    "mrazene|Mango kostky": {
+      "CIPA": { "price": 110, "unit": "kg", "date": "2026-03", "note": "2,5kg mražené, faktura 1260108506" }
+    },
+    "mrazene|Olivový olej sansa": {
+      "CIPA": { "price": 124, "unit": "l", "date": "2026-03", "note": "Santagata 5l=620 Kč, faktura 1260109475" }
+    },
+
+    "mrazene|Losos filet": {
+      "BIDFOOD": { "price": 314.89, "unit": "kg", "date": "2026-03", "note": "s kůží rozmraz., Norsko, faktura 760107250" },
+      "CIPA": { "price": 510, "unit": "kg", "date": "2026-02", "note": "s kůží chlazený, Norsko, faktura 1260106609" }
+    },
+    "mrazene|Kokosové mléko": {
+      "CIPA": { "price": 104, "unit": "ks", "date": "2026-02", "note": "AROY-D 1l, faktura 1260106609" }
+    },
+    "mrazene|Curry paste yellow": {
+      "CIPA": { "price": 85, "unit": "ks", "date": "2026-02", "note": "400g, faktura 1260106609" }
+    },
+    "mrazene|Curry paste red": {
+      "CIPA": { "price": 90, "unit": "ks", "date": "2026-02", "note": "400g, faktura 1260106609" }
+    },
+
+    "zelenina|Brambory (slupka)": {
+      "MTM BRAMBORY": { "price": 9.9, "unit": "kg", "date": "2026-03", "note": "balené, ref. Excel" },
+      "MAKRO": { "price": 14.95, "unit": "kg", "date": "2026-03", "note": "balené, ref. Excel" }
+    },
     "zelenina|Brambory grenaille": {
-      "ZELENINA BÍLÝ": { "price": 22, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 22, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 19.26, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Červená řepa": {
       "ZELENINA BÍLÝ": { "price": 16, "unit": "kg", "date": "2026-02" }
     },
     "zelenina|Mrkev": {
-      "ZELENINA BÍLÝ": { "price": 21, "unit": "kg", "date": "2026-02", "note": "karotka" }
+      "ZELENINA BÍLÝ": { "price": 21, "unit": "kg", "date": "2026-02", "note": "karotka" },
+      "MAKRO": { "price": 12.79, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Celer": {
       "ZELENINA BÍLÝ": { "price": 16, "unit": "kg", "date": "2026-02" }
@@ -17,13 +163,16 @@
       "ZELENINA BÍLÝ": { "price": 48, "unit": "kg", "date": "2026-02", "note": "Hokkaido" }
     },
     "zelenina|Cibule žlutá": {
-      "ZELENINA BÍLÝ": { "price": 14, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 14, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 9.57, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Cibule červená": {
-      "ZELENINA BÍLÝ": { "price": 21, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 21, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 22.6, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Šalotka": {
-      "ZELENINA BÍLÝ": { "price": 49, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 49, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 27.9, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Jarní cibulka": {
       "ZELENINA BÍLÝ": { "price": 18, "unit": "sv", "date": "2026-02", "note": "lahůdková" }
@@ -32,40 +181,52 @@
       "ZELENINA BÍLÝ": { "price": 76, "unit": "kg", "date": "2026-02" }
     },
     "zelenina|Rajčata": {
-      "ZELENINA BÍLÝ": { "price": 67, "unit": "kg", "date": "2026-02", "note": "keř" }
+      "ZELENINA BÍLÝ": { "price": 67, "unit": "kg", "date": "2026-02", "note": "keř" },
+      "MAKRO": { "price": 49.36, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Cherry rajčata": {
-      "ZELENINA BÍLÝ": { "price": 34, "unit": "bal 250g", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 34, "unit": "bal 250g", "date": "2026-02" },
+      "MAKRO": { "price": 116, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Papriky": {
-      "ZELENINA BÍLÝ": { "price": 115, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 115, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 107, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Cukety": {
-      "ZELENINA BÍLÝ": { "price": 84, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 84, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 119, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Lolo rosso": {
-      "ZELENINA BÍLÝ": { "price": 29, "unit": "ks", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 29, "unit": "ks", "date": "2026-02" },
+      "MAKRO": { "price": 37.6, "unit": "ks", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Lolo biondo": {
-      "ZELENINA BÍLÝ": { "price": 32, "unit": "ks", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 32, "unit": "ks", "date": "2026-02" },
+      "MAKRO": { "price": 37.6, "unit": "ks", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Římský salát": {
-      "ZELENINA BÍLÝ": { "price": 46, "unit": "ks", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 46, "unit": "ks", "date": "2026-02" },
+      "MAKRO": { "price": 37.52, "unit": "ks", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Rukola": {
-      "ZELENINA BÍLÝ": { "price": 32, "unit": "bal 125g", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 32, "unit": "bal 125g", "date": "2026-02" },
+      "MAKRO": { "price": 180, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Baby špenát": {
-      "ZELENINA BÍLÝ": { "price": 34, "unit": "bal 125g", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 34, "unit": "bal 125g", "date": "2026-02" },
+      "MAKRO": { "price": 181.85, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Máta": {
-      "ZELENINA BÍLÝ": { "price": 420, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 420, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 355, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Pažitka": {
-      "ZELENINA BÍLÝ": { "price": 520, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 520, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 475, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Listová petrželka": {
-      "ZELENINA BÍLÝ": { "price": 160, "unit": "kg", "date": "2026-02", "note": "Persil" }
+      "ZELENINA BÍLÝ": { "price": 160, "unit": "kg", "date": "2026-02", "note": "Persil" },
+      "MAKRO": { "price": 161, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Kopr": {
       "ZELENINA BÍLÝ": { "price": 380, "unit": "kg", "date": "2026-02" }
@@ -74,37 +235,46 @@
       "ZELENINA BÍLÝ": { "price": 89, "unit": "kg", "date": "2026-02" }
     },
     "zelenina|Limety": {
-      "ZELENINA BÍLÝ": { "price": 125, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 125, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 128.8, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Citrony": {
-      "ZELENINA BÍLÝ": { "price": 54, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 54, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 60, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Pomeranče": {
-      "ZELENINA BÍLÝ": { "price": 36, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 36, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 26.77, "unit": "kg", "date": "2026-03", "note": "ref. Excel, 10kg balení" }
     },
     "zelenina|Jablka": {
       "ZELENINA BÍLÝ": { "price": 29, "unit": "kg", "date": "2026-02" }
     },
     "zelenina|Pastiňák": {
-      "ZELENINA BÍLÝ": { "price": 28, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 28, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 37.58, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
+
     "zelenina|Česnek": {
-      "ZELENINA BÍLÝ": { "price": 159, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 159, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 145, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Česnek loupaný": {
       "ZELENINA BÍLÝ": { "price": 129, "unit": "kg", "date": "2026-02", "note": "vakuovaný" }
     },
     "zelenina|Květák": {
-      "ZELENINA BÍLÝ": { "price": 50, "unit": "ks", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 50, "unit": "ks", "date": "2026-02" },
+      "MAKRO": { "price": 43, "unit": "ks", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Ředkvičky": {
       "ZELENINA BÍLÝ": { "price": 14, "unit": "sv", "date": "2026-02" }
     },
     "zelenina|Zelí bílé": {
-      "ZELENINA BÍLÝ": { "price": 13, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 13, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 10.66, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Zelí červené": {
-      "ZELENINA BÍLÝ": { "price": 15, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 15, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 13.9, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Paprika bílá": {
       "ZELENINA BÍLÝ": { "price": 119, "unit": "kg", "date": "2026-02" }
@@ -116,10 +286,12 @@
       "ZELENINA BÍLÝ": { "price": 42, "unit": "ks", "date": "2026-02" }
     },
     "zelenina|Patáty": {
-      "ZELENINA BÍLÝ": { "price": 52, "unit": "kg", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 52, "unit": "kg", "date": "2026-02" },
+      "MAKRO": { "price": 43, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Polníček": {
-      "ZELENINA BÍLÝ": { "price": 34, "unit": "bal 125g", "date": "2026-02" }
+      "ZELENINA BÍLÝ": { "price": 34, "unit": "bal 125g", "date": "2026-02" },
+      "MAKRO": { "price": 234, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "zelenina|Salát Frisee": {
       "ZELENINA BÍLÝ": { "price": 58, "unit": "ks", "date": "2026-02" }
