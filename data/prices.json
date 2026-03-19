@@ -176,6 +176,28 @@
     "suchy|Cornichons": {
       "MAKRO": { "price": 93.45, "unit": "ks", "date": "2026-03", "note": "Delicias 720g" }
     },
+    "suchy|Česnek mletý": {
+      "GURMEKO": { "price": 195, "unit": "ks", "date": "2026-03", "note": "500g fol, faktura 120602469" }
+    },
+    "suchy|Kmín drcený": {
+      "GURMEKO": { "price": 125, "unit": "ks", "date": "2026-03", "note": "500g fol, faktura 120602469" }
+    },
+    "suchy|Kmín římský (cumin)": {
+      "GURMEKO": { "price": 264, "unit": "ks", "date": "2026-03", "note": "500g fol, faktura 120602469" }
+    },
+    "suchy|Kurkuma mletá": {
+      "GURMEKO": { "price": 163, "unit": "ks", "date": "2026-03", "note": "500g fol, faktura 120602469" }
+    },
+    "suchy|Muškátový ořech mletý": {
+      "GURMEKO": { "price": 130, "unit": "ks", "date": "2026-03", "note": "100g fol, faktura 120602469" }
+    },
+    "suchy|Nové koření mleté": {
+      "GURMEKO": { "price": 238, "unit": "ks", "date": "2026-03", "note": "500g fol, faktura 120602469" }
+    },
+    "suchy|Tymián drcený": {
+      "GURMEKO": { "price": 118, "unit": "ks", "date": "2026-03", "note": "250g fol, faktura 120602469" }
+    },
+
     "suchy|Hořčice dijon": {
       "MAKRO": { "price": 83.10, "unit": "ks", "date": "2026-03", "note": "950g" }
     },

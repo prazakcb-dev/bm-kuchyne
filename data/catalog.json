@@ -10,7 +10,8 @@
     { "name": "MADETA", "products": "Mléčné výrobky, vejce", "contact": "Motys", "phone": "778 402 124", "window": "PO–PÁ do 13:00" },
     { "name": "MAKRO", "products": "Maso, suchý sklad, ryby", "contact": "Honc", "phone": "799 182 695", "window": "PO–PÁ do 16:00" },
     { "name": "VODŇANSKÁ DRŮBEŽ", "products": "Drůbež", "contact": "Pasák", "phone": "724 503 908", "window": "PO–PÁ do 10:00" },
-    { "name": "DĚDOUCH ŘEZNÍK", "products": "Maso", "contact": "Hammerschmied", "phone": "604 325 563", "window": "PO–PÁ do 20:00" }
+    { "name": "DĚDOUCH ŘEZNÍK", "products": "Maso", "contact": "Hammerschmied", "phone": "604 325 563", "window": "PO–PÁ do 20:00" },
+    { "name": "GURMEKO", "products": "Koření", "contact": "Zákaznický servis", "phone": "283 880 066", "window": "PO–PÁ, objednavky@gurmeko.eu" }
   ],
   "categories": {
     "maso": {
@@ -107,6 +108,15 @@
           { "name": "Hnědý cukr", "supplier": "MAKRO" },
           { "name": "Palmový cukr", "supplier": "MAKRO" },
           { "name": "Med", "supplier": "MAKRO" }
+        ]},
+        { "title": "KOŘENÍ", "items": [
+          { "name": "Česnek mletý", "supplier": "GURMEKO" },
+          { "name": "Kmín drcený", "supplier": "GURMEKO" },
+          { "name": "Kmín římský (cumin)", "supplier": "GURMEKO" },
+          { "name": "Kurkuma mletá", "supplier": "GURMEKO" },
+          { "name": "Muškátový ořech mletý", "supplier": "GURMEKO" },
+          { "name": "Nové koření mleté", "supplier": "GURMEKO" },
+          { "name": "Tymián drcený", "supplier": "GURMEKO" }
         ]},
         { "title": "HOŘČICE", "items": [
           { "name": "Hořčice plnotučná", "supplier": "MAKRO" },
