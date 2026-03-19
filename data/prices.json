@@ -60,7 +60,8 @@
     },
 
     "maso|Pancetta": {
-      "BIDFOOD": { "price": 325, "unit": "kg", "date": "2026-03", "note": "Coati pancetta uzená, faktura 760107250" }
+      "BIDFOOD": { "price": 325, "unit": "kg", "date": "2026-03", "note": "Coati pancetta uzená, faktura 760107250" },
+      "LESA": { "price": 209, "unit": "kg", "date": "2026-03", "note": "Tesa affum. 1/2 Valpadana, DL 13037/26" }
     },
 
     "mleko|Vejce": {
@@ -84,7 +85,7 @@
       "MAKRO": { "price": 102, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
     },
     "mleko|Sýr Grana Padano": {
-      "LESA": { "price": 245, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+      "LESA": { "price": 265, "unit": "kg", "date": "2026-03", "note": "Formaggio Duro 1/2 forma Soresina, DL 13037/26" }
     },
     "mleko|Mascarpone": {
       "BIDFOOD": { "price": 158.82, "unit": "kg", "date": "2026-03", "note": "Goldsteig kbelík 2kg, faktura 760107250" }
@@ -93,6 +94,15 @@
       "BIDFOOD": { "price": 104.9, "unit": "kg", "date": "2026-03", "note": "5kg, faktura 760107250" }
     },
 
+    "suchy|Kapary": {
+      "LESA": { "price": 210, "unit": "ks", "date": "2026-03", "note": "Lacrimella v oct. nálevu 1700ml, DL 13037/26" }
+    },
+    "suchy|Drcená rajčata": {
+      "LESA": { "price": 40, "unit": "kg", "date": "2026-03", "note": "Strianese loupané 2500g=100 Kč/ks, DL 13037/26" }
+    },
+    "suchy|Pepř zelený": {
+      "LESA": { "price": 400, "unit": "ks", "date": "2026-03", "note": "400g, DL 13037/26" }
+    },
     "suchy|Olivový olej extra virgin": {
       "CIPA": { "price": 199, "unit": "l", "date": "2026-03", "note": "Santagata 5l=995 Kč, faktura 1260108506" }
     },
@@ -124,7 +134,8 @@
       "CIPA": { "price": 110, "unit": "kg", "date": "2026-03", "note": "2,5kg mražené, faktura 1260108506" }
     },
     "mrazene|Olivový olej sansa": {
-      "CIPA": { "price": 124, "unit": "l", "date": "2026-03", "note": "Santagata 5l=620 Kč, faktura 1260109475" }
+      "CIPA": { "price": 124, "unit": "l", "date": "2026-03", "note": "Santagata 5l=620 Kč, faktura 1260109475" },
+      "LESA": { "price": 85, "unit": "l", "date": "2026-03", "note": "Gusti Italia 5l=425 Kč, DL 13037/26" }
     },
 
     "mrazene|Losos filet": {
