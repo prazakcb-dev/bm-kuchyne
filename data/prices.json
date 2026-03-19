@@ -5,10 +5,13 @@
     "maso|Kuřecí prsa": {
       "BIDFOOD": { "price": 121, "unit": "kg", "date": "2026-03", "note": "ref. Excel" },
       "DĚDOUCH ŘEZNÍK": { "price": 135, "unit": "kg", "date": "2026-03", "note": "ref. Excel" },
-      "MAKRO": { "price": 129, "unit": "kg", "date": "2026-03", "note": "Rabbit cena v Excel" }
+      "MAKRO": { "price": 183, "unit": "kg", "date": "2026-03", "note": "MC CZ kuř. prsní řízky, faktura MAKRO březen 2026" }
     },
     "maso|Kuřecí stehna (s kostí)": {
       "MAKRO": { "price": 95.8, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+    },
+    "maso|Kuřecí stehna (vykostěná)": {
+      "MAKRO": { "price": 145.50, "unit": "kg", "date": "2026-03", "note": "BK, 139.90-145.50/kg, faktura MAKRO březen 2026" }
     },
     "maso|Kuře celé": {
       "MAKRO": { "price": 96.9, "unit": "kg", "date": "2026-03", "note": "ref. Excel" },
@@ -19,7 +22,8 @@
       "BIDFOOD": { "price": 240.43, "unit": "kg", "date": "2026-03", "note": "Banquet kach.steh. vel. 4ks" }
     },
     "maso|Kachní prsa": {
-      "CIPA": { "price": 275, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+      "CIPA": { "price": 275, "unit": "kg", "date": "2026-03", "note": "ref. Excel" },
+      "MAKRO": { "price": 231.50, "unit": "kg", "date": "2026-03", "note": "BK, faktura MAKRO březen 2026" }
     },
     "maso|Krůtí prsa": {
       "MAKRO": { "price": 279, "unit": "kg", "date": "2026-03", "note": "ref. Excel" },
@@ -65,27 +69,33 @@
     },
 
     "mleko|Vejce": {
-      "MAKRO": { "price": 4.88, "unit": "ks", "date": "2026-03", "note": "vel. M, ref. Excel" },
-      "MADETA": { "price": 4.9, "unit": "ks", "date": "2026-03", "note": "ref. Excel" }
+      "MAKRO": { "price": 5.70, "unit": "ks", "date": "2026-03", "note": "vel. L, faktura MAKRO březen 2026" },
+      "MADETA": { "price": 4.94, "unit": "ks", "date": "2026-03", "note": "vel. M, faktura 252605144" }
     },
     "mleko|Sýr cheddar": {
-      "BIDFOOD": { "price": 290.57, "unit": "kg", "date": "2026-03", "note": "plátky 1kg, faktura 760107250" }
+      "BIDFOOD": { "price": 290.57, "unit": "kg", "date": "2026-03", "note": "plátky 1kg, faktura 760107250" },
+      "MAKRO": { "price": 149.90, "unit": "kg", "date": "2026-03", "note": "Red 50%, faktura MAKRO březen 2026" }
     },
     "mleko|Majonéza": {
-      "BIDFOOD": { "price": 51.03, "unit": "kg", "date": "2026-03", "note": "Coronet 5kg, faktura 760107250" }
+      "BIDFOOD": { "price": 51.03, "unit": "kg", "date": "2026-03", "note": "Coronet 5kg, faktura 760107250" },
+      "MAKRO": { "price": 73.40, "unit": "kg", "date": "2026-03", "note": "70% oleje, 5kg" }
     },
     "mleko|Mléko plnotučné": {
       "MAKRO": { "price": 20.3, "unit": "l", "date": "2026-03", "note": "ref. Excel" },
-      "MADETA": { "price": 18, "unit": "l", "date": "2026-03", "note": "ref. Excel" }
+      "MADETA": { "price": 17, "unit": "l", "date": "2026-03", "note": "trv. 3.5%, faktura 252605144" }
     },
     "mleko|Smetana trvanlivá 33%": {
       "MADETA": { "price": 89, "unit": "l", "date": "2026-03", "note": "ref. Excel" }
     },
+    "mleko|Smetana čerstvá 33%": {
+      "MADETA": { "price": 81, "unit": "l", "date": "2026-03", "note": "Jč smetana čerstvá 33%, faktura 252605157" }
+    },
     "mleko|Máslo": {
-      "MAKRO": { "price": 102, "unit": "kg", "date": "2026-03", "note": "ref. Excel" }
+      "MAKRO": { "price": 106, "unit": "kg", "date": "2026-03", "note": "250g=26.50, faktura MAKRO březen 2026" }
     },
     "mleko|Sýr Grana Padano": {
-      "LESA": { "price": 265, "unit": "kg", "date": "2026-03", "note": "Formaggio Duro 1/2 forma Soresina, DL 13037/26" }
+      "LESA": { "price": 265, "unit": "kg", "date": "2026-03", "note": "Formaggio Duro 1/2 forma Soresina, DL 13037/26" },
+      "MAKRO": { "price": 387.61, "unit": "kg", "date": "2026-03", "note": "10M, faktura MAKRO březen 2026" }
     },
     "mleko|Mascarpone": {
       "BIDFOOD": { "price": 158.82, "unit": "kg", "date": "2026-03", "note": "Goldsteig kbelík 2kg, faktura 760107250" }
@@ -93,24 +103,81 @@
     "mleko|Tvaroh tučný": {
       "BIDFOOD": { "price": 104.9, "unit": "kg", "date": "2026-03", "note": "5kg, faktura 760107250" }
     },
+    "mleko|Sýr gouda": {
+      "MAKRO": { "price": 94.50, "unit": "kg", "date": "2026-03", "note": "48%, faktura MAKRO březen 2026" }
+    },
+    "mleko|Mozzarella": {
+      "MAKRO": { "price": 180.83, "unit": "kg", "date": "2026-03", "note": "45% 1kg, faktura MAKRO březen 2026" }
+    },
+    "mleko|Vaječná melanž": {
+      "MAKRO": { "price": 141.90, "unit": "kg", "date": "2026-03", "note": "1kg, faktura MAKRO březen 2026" }
+    },
+    "mleko|Pasterizované žloutky": {
+      "MAKRO": { "price": 259.45, "unit": "kg", "date": "2026-03", "note": "1kg, faktura MAKRO březen 2026" }
+    },
+    "mleko|Jogurt": {
+      "MAKRO": { "price": 146, "unit": "kg", "date": "2026-03", "note": "Kri-Kri řecký 10%, 1kg" }
+    },
+    "mleko|Zakysaná smetana": {
+      "MADETA": { "price": 56, "unit": "kg", "date": "2026-03", "note": "JČ kbelík 5kg=280 Kč, faktura 252605157" }
+    },
 
     "suchy|Kapary": {
-      "LESA": { "price": 210, "unit": "ks", "date": "2026-03", "note": "Lacrimella v oct. nálevu 1700ml, DL 13037/26" }
+      "LESA": { "price": 210, "unit": "ks", "date": "2026-03", "note": "Lacrimella v oct. nálevu 1700ml, DL 13037/26" },
+      "MAKRO": { "price": 42.33, "unit": "ks", "date": "2026-03", "note": "Efko 105ml, 1ks z 6-packu" }
     },
     "suchy|Drcená rajčata": {
-      "LESA": { "price": 40, "unit": "kg", "date": "2026-03", "note": "Strianese loupané 2500g=100 Kč/ks, DL 13037/26" }
+      "LESA": { "price": 40, "unit": "kg", "date": "2026-03", "note": "Strianese loupané 2500g=100 Kč/ks, DL 13037/26" },
+      "MAKRO": { "price": 79.38, "unit": "kg", "date": "2026-03", "note": "Mutti 2500g" }
     },
     "suchy|Pepř zelený": {
       "LESA": { "price": 400, "unit": "ks", "date": "2026-03", "note": "400g, DL 13037/26" }
     },
     "suchy|Olivový olej extra virgin": {
-      "CIPA": { "price": 199, "unit": "l", "date": "2026-03", "note": "Santagata 5l=995 Kč, faktura 1260108506" }
+      "CIPA": { "price": 199, "unit": "l", "date": "2026-03", "note": "Santagata 5l=995 Kč, faktura 1260108506" },
+      "MAKRO": { "price": 189.34, "unit": "l", "date": "2026-03", "note": "Costa d'Oro EVVO 5l" }
     },
     "suchy|Sójová omáčka": {
       "CIPA": { "price": 92, "unit": "ks", "date": "2026-03", "note": "Sweet A+ ketjap manis 500ml, faktura 1260109475" }
     },
     "suchy|Rýže jasmínová": {
       "CIPA": { "price": 46.67, "unit": "kg", "date": "2026-03", "note": "Royal Tiger 18kg=840 Kč, faktura 1260109475" }
+    },
+    "suchy|Olej rostlinný": {
+      "MAKRO": { "price": 37.47, "unit": "l", "date": "2026-03", "note": "ARO slunečnicový 10l PET" }
+    },
+    "suchy|Fritovací olej": {
+      "MAKRO": { "price": 51.73, "unit": "l", "date": "2026-03", "note": "Metro Chef 10l PET" }
+    },
+    "suchy|Mouka hladká": {
+      "MAKRO": { "price": 13.28, "unit": "kg", "date": "2026-03", "note": "faktura MAKRO březen 2026" }
+    },
+    "suchy|Mouka polohrubá": {
+      "MAKRO": { "price": 13.28, "unit": "kg", "date": "2026-03", "note": "faktura MAKRO březen 2026" }
+    },
+    "suchy|Mouka hrubá": {
+      "MAKRO": { "price": 13.28, "unit": "kg", "date": "2026-03", "note": "Babička Volba, 21.06/kg jiná var." }
+    },
+    "suchy|Bramborový škrob": {
+      "MAKRO": { "price": 98.06, "unit": "kg", "date": "2026-03", "note": "Natura Solamyl 1kg" }
+    },
+    "suchy|Cukr krystal": {
+      "MAKRO": { "price": 19.19, "unit": "kg", "date": "2026-03", "note": "faktura MAKRO březen 2026" }
+    },
+    "suchy|Cukr moučka": {
+      "MAKRO": { "price": 19.22, "unit": "kg", "date": "2026-03", "note": "faktura MAKRO březen 2026" }
+    },
+    "suchy|Hnědý cukr": {
+      "MAKRO": { "price": 56.18, "unit": "kg", "date": "2026-03", "note": "Golden Demerara 4kg" }
+    },
+    "suchy|Med": {
+      "MAKRO": { "price": 130.43, "unit": "kg", "date": "2026-03", "note": "ARO pekařský 4.5kg, květový 155.17/kg" }
+    },
+    "suchy|Cornichons": {
+      "MAKRO": { "price": 93.45, "unit": "ks", "date": "2026-03", "note": "Delicias 720g" }
+    },
+    "suchy|Hořčice dijon": {
+      "MAKRO": { "price": 83.10, "unit": "ks", "date": "2026-03", "note": "950g" }
     },
 
     "mrazene|Hranolky Aviko super crunch": {
@@ -128,10 +195,12 @@
       "CIPA": { "price": 75, "unit": "ks", "date": "2026-03", "note": "100g mražené, faktura 1260109475" }
     },
     "mrazene|Maliny": {
-      "CIPA": { "price": 380, "unit": "kg", "date": "2026-03", "note": "červené 2,5kg Ardo, faktura 1260108506" }
+      "CIPA": { "price": 380, "unit": "kg", "date": "2026-03", "note": "červené 2,5kg Ardo, faktura 1260108506" },
+      "MAKRO": { "price": 221.20, "unit": "kg", "date": "2026-03", "note": "2.5kg=553 Kč" }
     },
     "mrazene|Mango kostky": {
-      "CIPA": { "price": 110, "unit": "kg", "date": "2026-03", "note": "2,5kg mražené, faktura 1260108506" }
+      "CIPA": { "price": 110, "unit": "kg", "date": "2026-03", "note": "2,5kg mražené, faktura 1260108506" },
+      "MAKRO": { "price": 135.54, "unit": "kg", "date": "2026-03", "note": "1kg, faktura MAKRO březen 2026" }
     },
     "mrazene|Olivový olej sansa": {
       "CIPA": { "price": 124, "unit": "l", "date": "2026-03", "note": "Santagata 5l=620 Kč, faktura 1260109475" },
@@ -140,7 +209,8 @@
 
     "mrazene|Losos filet": {
       "BIDFOOD": { "price": 314.89, "unit": "kg", "date": "2026-03", "note": "s kůží rozmraz., Norsko, faktura 760107250" },
-      "CIPA": { "price": 510, "unit": "kg", "date": "2026-02", "note": "s kůží chlazený, Norsko, faktura 1260106609" }
+      "CIPA": { "price": 510, "unit": "kg", "date": "2026-02", "note": "s kůží chlazený, Norsko, faktura 1260106609" },
+      "MAKRO": { "price": 431, "unit": "kg", "date": "2026-03", "note": "Losos obecný filet TRIM D, Norsko" }
     },
     "mrazene|Kokosové mléko": {
       "CIPA": { "price": 104, "unit": "ks", "date": "2026-02", "note": "AROY-D 1l, faktura 1260106609" }
@@ -150,6 +220,15 @@
     },
     "mrazene|Curry paste red": {
       "CIPA": { "price": 90, "unit": "ks", "date": "2026-02", "note": "400g, faktura 1260106609" }
+    },
+    "mrazene|Brokolice": {
+      "MAKRO": { "price": 86.40, "unit": "kg", "date": "2026-03", "note": "2.25kg=194.40 Kč" }
+    },
+    "mrazene|Hrášek": {
+      "MAKRO": { "price": 64.37, "unit": "kg", "date": "2026-03", "note": "MC velmi jemný 2.5kg" }
+    },
+    "mrazene|Hřiby": {
+      "MAKRO": { "price": 284, "unit": "kg", "date": "2026-03", "note": "1kg, faktura MAKRO březen 2026" }
     },
 
     "zelenina|Brambory (slupka)": {
